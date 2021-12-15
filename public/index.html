@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" type="image/jpg" href="./favicon.png" />
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./codemirror/lib/codemirror.css" />
+		<link rel="stylesheet" href="./codemirror/theme/rubyblue.css" />
+		<script src="./codemirror/lib/codemirror.js"></script>
+		<script src="./codemirror/mode/xml/xml.js"></script>
+		<script src="./codemirror/mode/htmlmixed/htmlmixed.js"></script>
+		<script src="./clipboard/clipboard.min.js"></script>
+		<title>Document</title>
+		<!-- <link rel="stylesheet" href="style.css" /> -->
+		<script src="axios/axios.min.js"></script>
+	</head>
+	<body>
+		<div id="dom360_container">
+			<div class="container-fluid">
+				<div class="row mt-3">
+					<div id="tabRow" class="col-12">
+						<div id="textTab" class="tab selected">Code</div>
+						<div id="greenvilleTab" class="tab nopacity">Greenville</div>
+						<div id="andersonTab" class="tab nopacity">Anderson</div>
+						<div id="spartanburgTab" class="tab nopacity">Spartanburg</div>
+					</div>
+					<div class="col-12 viewContainer">
+						<div id="textArea" class="vis">
+							<form>
+								<textarea id="code" name="code"></textarea>
+							</form>
+						</div>
+						<div id="greenvilleContainer"></div>
+						<div id="andersonContainer"></div>
+						<div id="spartanburgContainer"></div>
+					</div>
+					<div id="buttonsContainer">
+						<div id="copyButtons">
+							<button
+								id="greenvilleBtn"
+								data-clipboard-text="test1"
+								class="btn"
+							>
+								Greenville
+							</button>
+							<button id="andersonBtn" data-clipboard-text="test2" class="btn">
+								Anderson
+							</button>
+							<button
+								id="spartanburgBtn"
+								data-clipboard-text="test3"
+								class="btn"
+							>
+								Spartanburg
+							</button>
+						</div>
+						<button id="generate" class="btn">Generate</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
