@@ -15,6 +15,7 @@ const cmtest = document.getElementById('code');
 const greenvilleBtn = new ClipboardJS('#greenvilleBtn');
 const andersonBtn = new ClipboardJS('#andersonBtn');
 const spartanburgBtn = new ClipboardJS('#spartanburgBtn');
+const copyButtons = document.getElementById('copyButtons').children;
 
 const myCodeMirror = CodeMirror.fromTextArea(cmtest, {
 	// value: 'Paste Code Here',
@@ -104,8 +105,11 @@ const switchy = (clickTarget) => {
 };
 
 // Clipboard
+const buttonText = ['Greenville', 'Anderson', 'Spartanburg'];
 greenvilleBtn.on('success', (e) => {
-	
+	copyButtonRemove();
+	e.trigger.innerText = 'COPIED!';
+	e.trigger.classList.add('clickedButton');
 });
 greenvilleBtn.on('error', (e) => {
 	console.log(e);
@@ -113,7 +117,9 @@ greenvilleBtn.on('error', (e) => {
 
 
 andersonBtn.on('success', (e) => {
-	// console.log(e);
+	copyButtonRemove();
+	e.trigger.innerText = 'COPIED!';
+	e.trigger.classList.add('clickedButton');
 });
 andersonBtn.on('error', (e) => {
 	console.log(e);
@@ -121,11 +127,20 @@ andersonBtn.on('error', (e) => {
 
 
 spartanburgBtn.on('success', (e) => {
-	// console.log(e);
+	copyButtonRemove();
+	e.trigger.innerText = 'COPIED!';
+	e.trigger.classList.add('clickedButton');
 });
 spartanburgBtn.on('error', (e) => {
 	console.log(e);
 });
 
 
+function copyButtonRemove() {
+	console.log(copyButtons);
+	for (let i = 0; i < copyButtons.length; i++) {
+		copyButtons[i].classList.remove('clickedButton');
+		copyButtons[i].innerText = buttonText[i];
+	}
+}
 

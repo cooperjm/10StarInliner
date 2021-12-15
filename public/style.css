@@ -154,3 +154,6 @@
 	pointer-events: none;
 }
 
+.clickedButton {
+	background:rgb(254, 1, 1) !important;
+}
